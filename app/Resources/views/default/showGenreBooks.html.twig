@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <div id="container">
+            <div id="welcome">
+                <h1>{{ genre }}</h1>
+            </div>
+            <div>
+                <ul>
+                    {% for book in books %}
+                        <li>
+                            <a href="{{ path('showBook', {'name':  book.name}) }}">{{ book.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
